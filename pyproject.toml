@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "mullvad-info"
+version = "0.1.0"
+description = ""
+authors = ["Franccesco Orozco <franccesco.orozco@codingdose.info>"]
+
+[tool.poetry.dependencies]
+python = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
