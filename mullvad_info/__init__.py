@@ -1,5 +1,5 @@
 """TODO: Initialization package."""
-from .api import Mapi
+from .api import Mullpi
 
-__all__ = ['Mapi']
+__all__ = ['Mullpi']
 __version__ = '0.1.0'

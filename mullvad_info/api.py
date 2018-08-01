@@ -3,7 +3,7 @@
 from requests import get as rget
 
 
-class Mapi():
+class Mullpi():
     """Todo: API."""
 
     def __init__(self):
