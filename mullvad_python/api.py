@@ -1,6 +1,7 @@
 """Module holding Mullpy class."""
 
 from requests import get as rget
+from .dns_leak import dnsleak_results
 
 
 class Mullpy():
@@ -39,6 +40,11 @@ class Mullpy():
         """Return blacklisted information."""
         blacklist_info = self.blacklisted['results']
         return blacklist_info
+
+    @staticmethod
+    def is_leaking():
+        """Check if user is leaking DNS data."""
+        return dnsleak_results()
 
     @staticmethod
     def check_port(port):

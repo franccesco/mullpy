@@ -4,7 +4,9 @@ from .api import Mullpy
 from .banner import banner
 
 
-def main():
+@click.command()
+@click.option('--dns', '-l', is_flag=True)
+def main(dns):
     """CLI for Mullvad API."""
     mullpy = Mullpy()
 
@@ -48,8 +50,16 @@ def main():
         click.secho('True', fg='red', bold=True)
     else:
         click.secho('False', fg='green', bold=True)
-    print()
-    exit(0)
+
+    # Dns Leak results from bash.ws
+    if dns:
+        print('DNS Leak: ', end='\t')
+        if mullpy.is_leaking():
+            click.secho('True', fg='red', bold=True)
+        else:
+            click.secho('False', fg='green', bold=True)
+        print()
+        exit(0)
 
 
 if __name__ == '__main__':
