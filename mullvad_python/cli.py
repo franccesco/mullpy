@@ -6,7 +6,8 @@ from .banner import banner
 
 @click.command()
 @click.option('--dns', '-l', is_flag=True)
-def main(dns):
+@click.option('--port', '-p', type=int, default=0)
+def main(dns, port=0):
     """CLI for Mullvad API."""
     mullpy = Mullpy()
 
@@ -58,9 +59,17 @@ def main(dns):
             click.secho('True', fg='red', bold=True)
         else:
             click.secho('False', fg='green', bold=True)
+
+    # Check if port is open
+    if port:
+        print(f'Port {port}: ', end='\t')
+        if mullpy.check_port(port):
+            click.secho('Open', fg='green', bold=True)
+        else:
+            click.secho('Closed', fg='red', bold=True)
         print()
         exit(0)
 
 
 if __name__ == '__main__':
-    main()
+    main(None)
