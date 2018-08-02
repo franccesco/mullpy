@@ -3,7 +3,7 @@
 from requests import get as rget
 
 
-class Mullpi():
+class Mullpy():
     """Todo: API."""
 
     def __init__(self):
@@ -13,7 +13,7 @@ class Mullpi():
         self.country = self.api_data['country']
         self.city = self.api_data['city']
         self.longitude = self.api_data['longitude']
-        self.latitud = self.api_data['latitude']
+        self.latitude = self.api_data['latitude']
         self.exit_ip = self.api_data['mullvad_exit_ip']
         if self.exit_ip:
             self.exit_hostname = self.api_data['mullvad_exit_ip_hostname']

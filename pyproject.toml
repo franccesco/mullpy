@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mullvad-info"
+name = "mullvad-python"
 version = "0.1.0"
 description = ""
 authors = ["Franccesco Orozco <franccesco.orozco@codingdose.info>"]
@@ -14,4 +14,4 @@ click = "^6.7"
 pytest = "^3.0"
 
 [tool.poetry.scripts]
-mulpi = "mullvad_info.cli:main"
+mullpy = "mullvad_python.cli:main"
