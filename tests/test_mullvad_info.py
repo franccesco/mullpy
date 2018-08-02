@@ -1,11 +1,9 @@
 """Mullpy tests."""
-import io
-import pytest
 from ipaddress import ip_address
+import pytest
 from mullvad_python import __version__
 from mullvad_python import Mullpy
 from mullvad_python import cli
-from contextlib import redirect_stdout
 
 # Initialize API handler
 mullpy = Mullpy()
@@ -50,12 +48,17 @@ def test_check_open_port():
     assert isinstance(mullpy.check_port(8080), bool)
 
 
+def test_dns_leak():
+    """Test if dns_leaking returns a boolean value."""
+    assert isinstance(mullpy.is_leaking(), bool)
+
+
 def test_if_cli_returns_zero():
     """Test if CLI returns zero."""
     # text_trap = io.StringIO()
     # with redirect_stdout(text_trap):
     #     cli.main()
     with pytest.raises(SystemExit) as wrapped:
-        cli.main()
+        cli.main(None)
     assert wrapped.type == SystemExit
     assert wrapped.value.code == 0
