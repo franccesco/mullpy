@@ -42,3 +42,11 @@ Blacklisted: 	False
 [ ] Port Checking
 [ ] DNS Leak Test
 [ ] Verbose options
+
+
+# Support this project
+If you like the project and would like to support me you can buy me a cup of coffee, that would be much appreciated 🙏. If you can't, don't worry, enjoy it :)
+
+<a href="https://www.paypal.me/orozcofranccesco">
+  <img height="32" src="assets/paypal_badge.png" />
+</a> <a href="https://www.buymeacoffee.com/franccesco" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> <a href='https://ko-fi.com/V7V8AXFE' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
