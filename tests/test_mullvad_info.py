@@ -25,8 +25,9 @@ def test_information_requested():
     assert mullpi.city
     assert mullpi.longitude
     assert mullpi.latitud
-    assert mullpi.exit_ip
-    assert mullpi.exit_hostname
+    if mullpi.exit_ip:
+        assert mullpi.exit_ip
+        assert mullpi.exit_hostname
     assert mullpi.blacklisted
 
 

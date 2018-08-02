@@ -15,9 +15,10 @@ class Mullpi():
         self.longitude = self.api_data['longitude']
         self.latitud = self.api_data['latitude']
         self.exit_ip = self.api_data['mullvad_exit_ip']
-        self.exit_hostname = self.api_data['mullvad_exit_ip_hostname']
-        self.organization = self.api_data['organization']
-        self.server_type = self.api_data['mullvad_server_type']
+        if self.exit_ip:
+            self.exit_hostname = self.api_data['mullvad_exit_ip_hostname']
+            self.organization = self.api_data['organization']
+            self.server_type = self.api_data['mullvad_server_type']
         self.blacklisted = self.api_data['blacklisted']
 
     def is_blacklisted(self):
