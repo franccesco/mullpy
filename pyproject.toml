@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "mullvad-python"
 version = "0.1.0"
-description = ""
+description = "Check Mullvad VPN connection status."
+readme = "README.md"
 authors = ["Franccesco Orozco <franccesco.orozco@codingdose.info>"]
 
 [tool.poetry.dependencies]
