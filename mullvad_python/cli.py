@@ -50,6 +50,7 @@ def main():
     else:
         click.secho('False', fg='green', bold=True)
     print()
+    exit(0)
 
 
 if __name__ == '__main__':
