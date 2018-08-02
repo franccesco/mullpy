@@ -35,13 +35,13 @@ Blacklisted: 	False
 ```
 
 # TODO
-[x] CLI
-[x] Testing
-[x] Continuous Integration
-[x] Code Coverage
-[ ] Port Checking
-[ ] DNS Leak Test
-[ ] Verbose options
+- [x] CLI
+- [x] Testing
+- [x] Continuous Integration
+- [x] Code Coverage
+- [ ] Port Checking
+- [ ] DNS Leak Test
+- [ ] Verbose options
 
 
 # Support this project
