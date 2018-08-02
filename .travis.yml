@@ -1,15 +1,25 @@
 language: python
 python:
-  - '3.4'
-  - '3.5'
-  - '3.6'
+- '3.6'
 before_install:
-  - pip install poetry
+- pip install poetry
 install:
-  - poetry install
+- poetry install
 script:
-  - poetry run coverage run -m pytest
+- poetry run coverage run -m pytest
 after_success:
-  - poetry run mullpy
+- poetry run mullpy
 after_script:
-  - poetry run coveralls
+- poetry run coveralls
+deploy:
+  provider: pypi
+  user: franccesco
+  password:
+    secure: Fy6cMUD6Cd0a/QSCiJ4Ty1MwnXyKcIjP5dXH8udakvImDllTmUct1Kek57WDbEikuIgoe77h3uDkH+TiZ+zCoQkAmCbS4To2MDUbvZ5PcTyN024hR20FnpGtAoakxR6p1oBitCO+TvNp89DZKDXgdWIoeA7mMQXgAy0rXzn6ebFlrMlwTCdHuN7frqGo/HA/esbLRAeD2Ybxa5WrlAgWfaBwFdkgz6joVU/wQoIzQTLK5u6u9goh3inCQXmDinHF7WsSq0J9+M/qUi0TjolJxQ6KrgdMYsJVSQZ0eX3Mf3B2IhNCylZnvCGv06exvXSkhem1KQeXRKp2bJbszBli53lSbojMqBujKUUA6hkzoCbyGKE2x0fDKIEpP/55EubndYV/uAxWqLW0KD3v12gwBRiLGc65I7DpQM0mJxukzakk3fFvloQH6BPwkvDvtY8u8y5LenEm/82TjVM10NBNjQ3So+ykdEzZpGxwSVV6KgcEmJmPze3nyb+JNpeqZVSTvHw862jx5RQdiPPjOJDlPfhjlEPYHMDC6JnDP65lR5HBJhgoqBkBdsim+I8ltOwInOuo0rxArkKEdT5ud80PpXfPdJtMvu7aBiHanWhwX40PUQItKlDK8pJ/fDPaQ8B1q0uyWScBuOzmlTOLZlCwEBTTGKQOY4TosahSlI+DhNM=
+  on:
+    tags: true
+    branch: master
+after_deploy:
+  - deactivate
+  - pip install mullvad-python
+  - mullpy
