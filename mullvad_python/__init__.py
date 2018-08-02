@@ -1,4 +1,4 @@
-"""TODO: Initialization package."""
+"""Initialization package."""
 from .api import Mullpy
 from .banner import banner
 
