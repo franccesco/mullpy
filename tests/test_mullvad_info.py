@@ -1,9 +1,11 @@
 """Mullpy tests."""
-
+import io
+import pytest
 from ipaddress import ip_address
 from mullvad_python import __version__
 from mullvad_python import Mullpy
-
+from mullvad_python import cli
+from contextlib import redirect_stdout
 
 # Initialize API handler
 mullpy = Mullpy()
@@ -11,7 +13,7 @@ mullpy = Mullpy()
 
 def test_version():
     """Test version."""
-    assert __version__ == '0.1.0'
+    assert __version__ == '0.1.4'
 
 
 def test_request_to_api():
@@ -46,3 +48,14 @@ def test_blacklisted_information():
 def test_check_open_port():
     """Test if port is open or closed (True or False)."""
     assert isinstance(mullpy.check_port(8080), bool)
+
+
+def test_if_cli_returns_zero():
+    """Test if CLI returns zero."""
+    # text_trap = io.StringIO()
+    # with redirect_stdout(text_trap):
+    #     cli.main()
+    with pytest.raises(SystemExit) as wrapped:
+        cli.main()
+    assert wrapped.type == SystemExit
+    assert wrapped.value.code == 0

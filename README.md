@@ -1,4 +1,5 @@
 # Mullpy
+[![Build Status](https://travis-ci.org/franccesco/mullpy.svg?branch=master)](https://travis-ci.org/franccesco/mullpy) [![Coverage Status](https://coveralls.io/repos/github/franccesco/mullpy/badge.svg?branch=develop)](https://coveralls.io/github/franccesco/mullpy?branch=develop)
 
 A little tool to check if you're currently connected to **Mullvad** VPN or not. Read the _very flattering_ [Mullvad review here](https://thatoneprivacysite.net/2017/10/03/mullvad-review/) by [That One Privacy Site](https://thatoneprivacysite.net/)
 
