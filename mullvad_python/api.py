@@ -1,13 +1,22 @@
-"""TODO: api documentation."""
+"""Module holding Mullpy class."""
 
 from requests import get as rget
 
 
 class Mullpy():
-    """Todo: API."""
+    """Mullpy class methods.
+    Initialize requesting basic data about yourself to see if you're connected
+    to Mullvad's servers.
+
+    isblacklisted(): Return a bool if you're blacklisted.
+    blacklist_information: Return information if you're blacklisted under
+    Spamhouse or Project Honeypot.
+
+    check_port(): Check if your port is reachable.
+    """
 
     def __init__(self):
-        """TODO: initialization."""
+        """Request API data and initialize them."""
         self.api_data = rget('https://am.i.mullvad.net/json').json()
         self.ip = self.api_data['ip']
         self.country = self.api_data['country']
@@ -31,7 +40,8 @@ class Mullpy():
         blacklist_info = self.blacklisted['results']
         return blacklist_info
 
-    def check_port(self, port):
+    @staticmethod
+    def check_port(port):
         """Ony check if port is open."""
         req_port = rget(f'https://am.i.mullvad.net/port/{port}').json()
         is_open = req_port['reachable']

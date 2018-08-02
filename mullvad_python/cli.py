@@ -1,12 +1,11 @@
-"""TODO: CLI."""
+"""Command Line Interface module."""
 import click
-import argparse
 from .api import Mullpy
 from .banner import banner
 
 
 def main():
-    """TODO: CLI main."""
+    """CLI for Mullvad API."""
     mullpy = Mullpy()
 
     if mullpy.exit_ip:
