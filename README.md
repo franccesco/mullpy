@@ -45,6 +45,12 @@ Options:
   --help              Show this message and exit.
 ```
 
+# Contribution
+If you want to contribute to the project then:
+1. Fork the project.
+2. Make changes.
+2. Make a pull request to the **develop** branch.
+
 # TODO
 - [x] CLI
 - [x] Testing
