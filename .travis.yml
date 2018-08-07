@@ -1,18 +1,18 @@
 language: python
 python:
-  - '3.6'
+- '3.6'
 before_install:
-  - pip install poetry
+- pip install poetry
 install:
-  - poetry install
+- poetry install
 script:
-  - poetry run coverage run -m pytest
+- poetry run coverage run -m pytest
 after_success:
-  - poetry run mullpy
+- poetry run mullpy
 after_script:
-  - poetry run coveralls
+- poetry run coveralls
 before_deploy:
-  - poetry build
+- poetry build
 deploy:
   skip_cleanup: true
   provider: pypi
@@ -23,6 +23,9 @@ deploy:
     tags: true
     branch: master
 after_deploy:
-  - deactivate
-  - pip install mullvad-python
-  - mullpy
+- deactivate
+- pip install mullvad-python
+- mullpy
+notifications:
+  slack:
+    secure: Ov/NSsyY5RVNeed2gxuh+yLhKT/VgAPsS+xdBpq3pqlqcQ1/YzkaZSbemBCHVdtfJBwfnEAPONvGjV7DskgOA7E1dMguQKZaoQGE/SwRmKodViJ3mJy4JQ6bb6bzflLEmApvDkrOIMnKz3AV77a6gC1inwypF05lHQmfP9EoqFy9qPXtxwQ46Czg6N3cDn/453lysTcrJiLME1oru0zsxpkP+wRuDkuqspI9Fp2EtmL/2InRbAhhhWzc6w3ZRcL0pI/09jo25/Fnmn3WzRXgIzvtk4rVJ8zFxlmyoeCQqnlPJ/Pxo0kzehMaowU9wkLrQNg4gkVwg+ADPBN/YSO+FfgiYj5S2Td19Oc9V6Ex00da5ZSM4Gr9wIffwzMvBJV+jjPu9gINqeC70iU/R5iMlMHNNCng7llaTTefTuifqYHMt++18AtWFDIdEU9tNrwP0RalVhytQ2FL48/mN1vrTPPa2Blq/2l0r1dRHM9nzne6ZUOexk/ZgXi5QLNSMEuG+Zw1bEhllogfRvl1FuzWs1kCZXF5JdXGMNpIBKqLMMzVkeef0zQwcIE6LMlvGsEQgZRmsbilSLkV00bjsgxz+umRryPN5FAPi/0GZfogjpwO+h/jZjZ1GqKbHShIcKbzRTz7vGS46LkXPQnFzODw48g66blwlSlkWSf+jBnob6c=
