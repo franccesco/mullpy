@@ -1,6 +1,8 @@
 # Mullpy
 [![Build Status](https://travis-ci.org/franccesco/mullpy.svg?branch=master)](https://travis-ci.org/franccesco/mullpy) [![Coverage Status](https://coveralls.io/repos/github/franccesco/mullpy/badge.svg?branch=develop)](https://coveralls.io/github/franccesco/mullpy?branch=develop)
 
+## This tool is now deprecated, please use the official [Mullvad CLI](https://mullvad.net/en/help/how-use-mullvad-cli/)
+
 A little tool to check if you're currently connected to **Mullvad** VPN or not and also checks for an open port and a DNS leak test. If you want to read more about Mullvad VPN you can goa head and read the _very flattering_ [Mullvad review here](https://thatoneprivacysite.net/2017/10/03/mullvad-review/) by [That One Privacy Site](https://thatoneprivacysite.net/)
 
 The tool _does not_ intend to be a swiss army knife, just a two day mini-project so I don't have to go to [am.i.mullvad.net](http://am.i.mullvad.net/) everytime to check on my connection. **For WebRTC you should go to their website!**
@@ -20,11 +22,11 @@ $ pip install --user mullvad-python
 # Usage
 ```bash
 $ mullpy
-   \  |         |  |               
-  |\/ |  |   |  |  |  __ \   |   | 
-  |   |  |   |  |  |  |   |  |   | 
- _|  _| \__,_| _| _|  .__/  \__, | 
-                     _|     ____/  
+   \  |         |  |
+  |\/ |  |   |  |  |  __ \   |   |
+  |   |  |   |  |  |  |   |  |   |
+ _|  _| \__,_| _| _|  .__/  \__, |
+                     _|     ____/
 
 Using Mullvad:	True
 Server Type:	Wireguard
